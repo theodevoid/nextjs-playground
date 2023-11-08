@@ -1,6 +1,7 @@
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
+import { GeistSans } from "geist/font";
 
 import { api } from "~/utils/api";
 
@@ -12,7 +13,12 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <main
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        className={`${GeistSans.variable} min-h-screen font-sans`}
+      >
+        <Component {...pageProps} />
+      </main>
     </SessionProvider>
   );
 };
