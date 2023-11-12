@@ -30,6 +30,7 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
+    "@typescript-eslint/no-floating-promises": "off",
   },
 };
 
